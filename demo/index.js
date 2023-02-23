@@ -5,7 +5,15 @@ import { ExportSheet } from '../es';
 import { data, array } from './data.json';
 
 const head = [
-  { title: '排序', dataIndex: 'sort' },
+  {
+    cell: (row, col, rowNumber, colNumber) => {
+      console.log(row, col, rowNumber, colNumber);
+
+      return row;
+    },
+    title: '排序',
+    dataIndex: 'sort',
+  },
   { title: '母商品ID', dataIndex: 'parentItemId' },
   { title: '子商品ID', dataIndex: 'itemId' },
   { title: '商品名称', dataIndex: 'itemName' },
