@@ -84,12 +84,6 @@
       "path": "./node_modules/cz-emoji"
     }
   },
-  "husky": {
-    "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook",
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "*.(ts|tsx)": "tslint --fix",
     "**/src/*.+(js|ts|tsx|jsx|)": "prettier --write",
