@@ -128,7 +128,7 @@ class ExportSheet extends PureComponent {
         rowNumber++;
         var dealedObj = {};
         header.map((key, colNumber) => {
-          dealedObj[key.title] = key?.cell
+          dealedObj[key.title] = key.cell
             ? key.cell(value[key.dataIndex], key, rowNumber, colNumber + 1)
             : value[key.dataIndex];
           if (resultValues.includes(dealedObj)) return true;
