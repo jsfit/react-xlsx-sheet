@@ -28,6 +28,7 @@ const supportExt: Array<string> = [
 interface HeaderItem {
   title: string;
   dataIndex: string;
+  cell?: Function;
 }
 interface HeaderOption {
   dateNF: string;
@@ -133,14 +134,19 @@ class ExportSheet extends PureComponent<Props, State> {
     const resultHeaders: Array<string> = [];
     // !Array.isArray(props.dataSource[0]))
     if (dataType === 'Array-of-Object') {
+      let rowNumber: number = 1;
+
       dataSource.map((value: map) => {
         if (isEmpty(value))
           throw new Error(
             'dataSource must be like Array-of-Object type, the Object not be empty',
           );
+        rowNumber++;
         const dealedObj: map = {};
-        header.map((key) => {
-          dealedObj[key.title] = value[key.dataIndex];
+        header.map((key, colNumber: number) => {
+          dealedObj[key.title] = key?.cell
+            ? key.cell(value[key.dataIndex], key, rowNumber, colNumber + 1)
+            : value[key.dataIndex];
           if (resultValues.includes(dealedObj)) return true;
           resultValues.push(dealedObj);
           if (resultHeaders.includes(key.title)) return true;

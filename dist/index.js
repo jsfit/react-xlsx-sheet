@@ -1,4 +1,4 @@
-!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e(require("prop-types"),require("react")):"function"==typeof define&&define.amd?define(["prop-types","react"],e):"object"==typeof exports?exports["react-xlsx-sheet"]=e(require("prop-types"),require("react")):t["react-xlsx-sheet"]=e(t.PropTypes,t.React)}(window,function(r,o){return i={},n.m=c=[function(t,e){t.exports=r},function(t,e,r){function o(t){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}var n=r(9),c="object"==("undefined"==typeof self?"undefined":o(self))&&self&&self.Object===Object&&self,i=n||c||Function("return this")()
+!function(t,e){"object"==typeof exports&&"object"==typeof module?module.exports=e(require("prop-types"),require("react")):"function"==typeof define&&define.amd?define(["prop-types","react"],e):"object"==typeof exports?exports["react-xlsx-sheet-advance"]=e(require("prop-types"),require("react")):t["react-xlsx-sheet-advance"]=e(t.PropTypes,t.React)}(window,function(r,o){return i={},n.m=c=[function(t,e){t.exports=r},function(t,e,r){function o(t){return(o="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}var n=r(9),c="object"==("undefined"==typeof self?"undefined":o(self))&&self&&self.Object===Object&&self,i=n||c||Function("return this")()
 t.exports=i},function(t,e){t.exports=o},function(t,e,r){var o=r(20),n=r(26)
 t.exports=function(t,e){var r=n(t,e)
 return o(r)?r:void 0}},function(t,e,r){var o=r(8),n=r(22),c=r(23),i=o?o.toStringTag:void 0
@@ -23,12 +23,12 @@ t.exports=function(t){if(!o(t))return n(t)
 var e=[]
 for(var r in Object(t))c.call(t,r)&&"constructor"!=r&&e.push(r)
 return e}},function(t,e,r){var o=r(17)(Object.keys,Object)
-t.exports=o},function(t,e){t.exports=function(e,r){return function(t){return e(r(t))}}},function(t,e,r){var o=r(19),n=r(27),c=r(28),i=r(29),u=r(30),a=r(4),f=r(11),l="[object Map]",p="[object Promise]",s="[object Set]",y="[object WeakMap]",b="[object DataView]",d=f(o),m=f(n),j=f(c),h=f(i),v=f(u),S=a;(o&&S(new o(new ArrayBuffer(1)))!=b||n&&S(new n)!=l||c&&S(c.resolve())!=p||i&&S(new i)!=s||u&&S(new u)!=y)&&(S=function(t){var e=a(t),r="[object Object]"==e?t.constructor:void 0,o=r?f(r):""
+t.exports=o},function(t,e){t.exports=function(e,r){return function(t){return e(r(t))}}},function(t,e,r){var o=r(19),n=r(27),c=r(28),i=r(29),u=r(30),a=r(4),f=r(11),l="[object Map]",p="[object Promise]",s="[object Set]",y="[object WeakMap]",b="[object DataView]",d=f(o),m=f(n),j=f(c),v=f(i),h=f(u),S=a;(o&&S(new o(new ArrayBuffer(1)))!=b||n&&S(new n)!=l||c&&S(c.resolve())!=p||i&&S(new i)!=s||u&&S(new u)!=y)&&(S=function(t){var e=a(t),r="[object Object]"==e?t.constructor:void 0,o=r?f(r):""
 if(o)switch(o){case d:return b
 case m:return l
 case j:return p
-case h:return s
-case v:return y}return e}),t.exports=S},function(t,e,r){var o=r(3)(r(1),"DataView")
+case v:return s
+case h:return y}return e}),t.exports=S},function(t,e,r){var o=r(3)(r(1),"DataView")
 t.exports=o},function(t,e,r){var o=r(5),n=r(24),c=r(10),i=r(11),u=/^\[object .+?Constructor\]$/,a=Function.prototype,f=Object.prototype,l=a.toString,p=f.hasOwnProperty,s=RegExp("^"+l.call(p).replace(/[\\^$.*+?()[\]{}|]/g,"\\$&").replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g,"$1.*?")+"$")
 t.exports=function(t){return!(!c(t)||n(t))&&(o(t)?s:u).test(i(t))}},function(t,e){function r(t){return(r="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t})(t)}var o
 o=function(){return this}()
@@ -65,7 +65,7 @@ if("Map"===r||"Set"===r)return Array.from(r)
 if("Arguments"===r||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(r))return m(t,e)}(t)||function(){throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}()}function m(t,e){(null==e||e>t.length)&&(e=t.length)
 for(var r=0,o=new Array(e);r<e;r++)o[r]=t[r]
 return o}function j(t,e){for(var r=0;r<e.length;r++){var o=e[r]
-o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}function h(t,e,r){return e&&j(t.prototype,e),r&&j(t,r),t}function v(t,e){return(v=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}function S(c){return function(){var t,e,r,o=x(c)
+o.enumerable=o.enumerable||!1,o.configurable=!0,"value"in o&&(o.writable=!0),Object.defineProperty(t,o.key,o)}}function v(t,e,r){return e&&j(t.prototype,e),r&&j(t,r),t}function h(t,e){return(h=Object.setPrototypeOf||function(t,e){return t.__proto__=e,t})(t,e)}function S(c){return function(){var t,e,r,o=x(c)
 if(function(){if("undefined"==typeof Reflect||!Reflect.construct)return
 if(Reflect.construct.sham)return
 if("function"==typeof Proxy)return 1
@@ -73,7 +73,7 @@ try{return Date.prototype.toString.call(Reflect.construct(Date,[],function(){}))
 t=Reflect.construct(o,arguments,n)}else t=o.apply(this,arguments)
 return e=this,!(r=t)||"object"!==p(r)&&"function"!=typeof r?function(t){if(void 0!==t)return t
 throw new ReferenceError("this hasn't been initialised - super() hasn't been called")}(e):r}}function x(t){return(x=Object.setPrototypeOf?Object.getPrototypeOf:function(t){return t.__proto__||Object.getPrototypeOf(t)})(t)}var O=["xlsx","xlsm","xlsb","xls","ods","fods","csv","txt","sylk","html","dif","dbf","rtf","prn","eth"],g=function(){!function(t,e){if("function"!=typeof e&&null!==e)throw new TypeError("Super expression must either be null or a function")
-t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&v(t,e)}(r,o["PureComponent"])
+t.prototype=Object.create(e&&e.prototype,{constructor:{value:t,writable:!0,configurable:!0}}),e&&h(t,e)}(r,o["PureComponent"])
 var e=S(r)
 function r(t){var a
 if(!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,r),(a=e.call(this,t)).XLSX=a.props.xlsx,a.toSheet=function(){var t,e,r=a.state,o=r.utilsName,n=r.dataSource
@@ -85,7 +85,7 @@ var i=a.toRightDate()
 return(e=a.XLSX.utils)[o].apply(e,d(i))}},a.exportFile=function(){var t=a.toSheet(),e=a.props,r=e.extName,o=e.fileName,n=e.isRequiredNameDate,c=e.fileDate,i=(n?"".concat(o,"__").concat(c):o).replace(/\\|\/|\?|\*|\[|\]|\s|\{|\}/g,"_"),u=a.XLSX.utils.book_new()
 a.XLSX.utils.book_append_sheet(u,t,i),a.XLSX.writeFile(u,"".concat(i,".").concat(r))},!O.includes(t.extName))throw new Error("extName not suport")
 if(a.importType={"Array-of-Arrays":"aoa_to_sheet","Array-of-Object":"json_to_sheet","Table-Node-Element":"table_to_sheet"},!a.importType[t.dataType])throw new Error("dataType must be oneOf [ Array-of-Arrays,Array-of-Object,Table-Node-Element]")
-return a.state={utilsName:a.importType[t.dataType],dataSource:t.dataSource},a}return h(r,null,[{key:"getDerivedStateFromProps",value:function(t,e){return t.dataSource!==e.dataSource?{dataSource:t.dataSource}:null}}]),h(r,[{key:"toRightDate",value:function(){var t=this.props,o=t.header,e=t.headerOption,r=this.state.dataSource,n=this.props.dataType,c=[],i=[]
+return a.state={utilsName:a.importType[t.dataType],dataSource:t.dataSource},a}return v(r,null,[{key:"getDerivedStateFromProps",value:function(t,e){return t.dataSource!==e.dataSource?{dataSource:t.dataSource}:null}}]),v(r,[{key:"toRightDate",value:function(){var t=this.props,o=t.header,e=t.headerOption,r=this.state.dataSource,n=this.props.dataType,c=[],i=[]
 return"Array-of-Object"===n?(r.map(function(e){if(a()(e))throw new Error("dataSource must be like Array-of-Object type, the Object not be empty")
 var r={}
 return o.map(function(t){return r[t.title]=e[t.dataIndex],!!c.includes(r)||(c.push(r),i.includes(t.title)||i.push(t.title),!0)}),!0}),[c,y({header:i},e)]):"Array-of-Arrays"===n?(r.map(function(t){if(!Array.isArray(t))throw new Error("dataSource must be like Array-of-Arrays type")
