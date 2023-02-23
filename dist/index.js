@@ -85,11 +85,14 @@ var i=a.toRightDate()
 return(e=a.XLSX.utils)[o].apply(e,d(i))}},a.exportFile=function(){var t=a.toSheet(),e=a.props,r=e.extName,o=e.fileName,n=e.isRequiredNameDate,c=e.fileDate,i=(n?"".concat(o,"__").concat(c):o).replace(/\\|\/|\?|\*|\[|\]|\s|\{|\}/g,"_"),u=a.XLSX.utils.book_new()
 a.XLSX.utils.book_append_sheet(u,t,i),a.XLSX.writeFile(u,"".concat(i,".").concat(r))},!O.includes(t.extName))throw new Error("extName not suport")
 if(a.importType={"Array-of-Arrays":"aoa_to_sheet","Array-of-Object":"json_to_sheet","Table-Node-Element":"table_to_sheet"},!a.importType[t.dataType])throw new Error("dataType must be oneOf [ Array-of-Arrays,Array-of-Object,Table-Node-Element]")
-return a.state={utilsName:a.importType[t.dataType],dataSource:t.dataSource},a}return v(r,null,[{key:"getDerivedStateFromProps",value:function(t,e){return t.dataSource!==e.dataSource?{dataSource:t.dataSource}:null}}]),v(r,[{key:"toRightDate",value:function(){var t=this.props,o=t.header,e=t.headerOption,r=this.state.dataSource,n=this.props.dataType,c=[],i=[]
-return"Array-of-Object"===n?(r.map(function(e){if(a()(e))throw new Error("dataSource must be like Array-of-Object type, the Object not be empty")
-var r={}
-return o.map(function(t){return r[t.title]=e[t.dataIndex],!!c.includes(r)||(c.push(r),i.includes(t.title)||i.push(t.title),!0)}),!0}),[c,y({header:i},e)]):"Array-of-Arrays"===n?(r.map(function(t){if(!Array.isArray(t))throw new Error("dataSource must be like Array-of-Arrays type")
-return null}),[r,y({},e)]):[]}},{key:"render",value:function(){var t,e=this,r=this.props,o=r.children,n=r.isDOMElement
+return a.state={utilsName:a.importType[t.dataType],dataSource:t.dataSource},a}return v(r,null,[{key:"getDerivedStateFromProps",value:function(t,e){return t.dataSource!==e.dataSource?{dataSource:t.dataSource}:null}}]),v(r,[{key:"toRightDate",value:function(){var t=this.props,e=t.header,r=t.headerOption,o=this.state.dataSource,n=this.props.dataType,c=[],i=[]
+if("Array-of-Object"!==n)return"Array-of-Arrays"===n?(o.map(function(t){if(!Array.isArray(t))throw new Error("dataSource must be like Array-of-Arrays type")
+return null}),[o,y({},r)]):[]
+var u=1
+return o.map(function(r){if(a()(r))throw new Error("dataSource must be like Array-of-Object type, the Object not be empty")
+u++
+var o={}
+return e.map(function(t,e){return o[t.title]=null!=t&&t.cell?t.cell(r[t.dataIndex],t,u,e+1):r[t.dataIndex],!!c.includes(o)||(c.push(o),i.includes(t.title)||i.push(t.title),!0)}),!0}),[c,y({header:i},r)]}},{key:"render",value:function(){var t,e=this,r=this.props,o=r.children,n=r.isDOMElement
 if(!i.a.isValidElement(o))throw new Error("The Children must be a valid React Element !")
 var c=o.props.onClick
 if(n){t=i.a.cloneElement(i.a.Children.only(o),{onClick:function(t){e.exportFile(),l()(c)&&c(t)}})}else t=i.a.cloneElement(i.a.Children.only(o),{exportsheet:this.exportFile})
