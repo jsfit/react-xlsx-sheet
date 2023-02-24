@@ -152,7 +152,7 @@ class ExportSheet extends PureComponent<Props, State> {
         rowNumber++;
         const dealedObj: map = {};
         header.map((key, colNumber: number) => {
-          dealedObj[key.title] = key?.cell
+          dealedObj[key.title] = key.cell
             ? key.cell({
                 value: value[key.dataIndex],
                 row: value,
