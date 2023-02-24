@@ -7,6 +7,25 @@ Based on xlsx package, document reference <a href="https://github.com/SheetJS/js
 ```bash
 yarn add react-xlsx-sheet-advance
 ```
+### Header attributes advancement
+```js
+const head = [
+  {
+    title: 'Sort',
+    dataIndex: 'sort',
+    cell: ({ value, row, dataIndex, rowNumber, colNumber }) => {
+      // value: refer to value of dataIndex in the object
+      // row: refer to current object
+      // dataIndex: taken from the props
+      // rowNumber: refer to row number of current record
+      // colNumber: refer to column number of current cell
+
+      return "Any modified result for current cell" // return result will be placed in the excel sheet
+    },
+  },
+];
+```
+
 
 ## Basic usage
 
@@ -35,6 +54,7 @@ const data = [{
     "skuPrice": "3039",
     "sort": 111,
     "stock": 40717,
+    "tax": 100,
 }]
 
 <ExportSheet
