@@ -28,8 +28,16 @@ const supportExt: Array<string> = [
 interface HeaderItem {
   title: string;
   dataIndex: string;
-  cell?: Function;
+  cell?: (item: CellInterface) => void;
 }
+interface CellInterface {
+  value: any;
+  row: object;
+  dataIndex: string;
+  rowNumber: number;
+  colNumber: number;
+}
+
 interface HeaderOption {
   dateNF: string;
   skipHeader: boolean;
@@ -145,7 +153,13 @@ class ExportSheet extends PureComponent<Props, State> {
         const dealedObj: map = {};
         header.map((key, colNumber: number) => {
           dealedObj[key.title] = key?.cell
-            ? key.cell(value[key.dataIndex], key, rowNumber, colNumber + 1)
+            ? key.cell({
+                value: value[key.dataIndex],
+                row: value,
+                dataIndex: key.dataIndex,
+                rowNumber: rowNumber,
+                colNumber: colNumber + 1,
+              })
             : value[key.dataIndex];
           if (resultValues.includes(dealedObj)) return true;
           resultValues.push(dealedObj);
